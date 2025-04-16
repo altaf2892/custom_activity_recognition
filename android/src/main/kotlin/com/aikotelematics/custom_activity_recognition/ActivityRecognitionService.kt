@@ -274,7 +274,7 @@ class ActivityRecognitionService : Service() {
         val builder = NotificationCompat.Builder(this, channelId)
             .setContentIntent(pendingIntent)
             .setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE)
-        builder.setContentTitle("Traking user activity")
+        builder.setContentTitle("Tracking user activity")
             .setContentText("")
             .setSmallIcon(R.mipmap.ic_launcher)
             .setPriority(NotificationCompat.PRIORITY_MIN)
