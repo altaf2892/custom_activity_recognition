@@ -1,0 +1,2 @@
+/Users/spaculus/Altaf_Projects/Flutter_Projects/github_clone/custom_activity_recognition/example/android/app/.cxx/Debug/1k292m1d/x86_64/CMakeFiles/edit_cache.dir
+/Users/spaculus/Altaf_Projects/Flutter_Projects/github_clone/custom_activity_recognition/example/android/app/.cxx/Debug/1k292m1d/x86_64/CMakeFiles/rebuild_cache.dir

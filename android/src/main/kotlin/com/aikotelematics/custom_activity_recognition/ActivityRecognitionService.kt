@@ -30,8 +30,8 @@ class ActivityRecognitionService : Service() {
         private const val TRANSITION_REQUEST_CODE = 200
         private const val TAG = "ActivityService"
         private const val NOTIFICATION_ID = 4321
-        private const val CHANNEL_ID = "activity_recognition_channel"
-        private const val SILENT_CHANNEL_ID = "activity_recognition_silent_channel"
+        private const val CHANNEL_ID = "Altaf_channel"
+        private const val SILENT_CHANNEL_ID = "Altaf_CHANNEL_ID_Silent"
 
         var detectionIntervalMillis: Int = 10000
         var confidenceThreshold: Int = 50
@@ -92,7 +92,7 @@ class ActivityRecognitionService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
 
         showNotification = intent?.getBooleanExtra("showNotification", true) ?: true
-
+        showNotification=false;
         useTransitionRecognition = intent?.getBooleanExtra("useTransitionRecognition", true) ?: true
         useActivityRecognition = intent?.getBooleanExtra("useActivityRecognition", true) ?: true
         detectionIntervalMillis = intent?.getIntExtra("detectionIntervalMillis", detectionIntervalMillis) ?: detectionIntervalMillis
@@ -224,7 +224,7 @@ class ActivityRecognitionService : Service() {
 
             val normalChannel = NotificationChannel(
                 CHANNEL_ID,
-                "Activity Recognition",
+                "Blessed quester",  // Changed from "Altaf_CHANNEL_ID"
                 NotificationManager.IMPORTANCE_LOW
             ).apply {
                 description = "Tracking user activity"
@@ -276,15 +276,15 @@ class ActivityRecognitionService : Service() {
             .setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE)
 
         if (showNotification) {
-            builder.setContentTitle("Activity Recognition")
+            builder.setContentTitle("Blessed quester")  // Changed from "Activity"
                 .setContentText("$currentActivity$timestampFormatted")
-                .setSmallIcon(android.R.drawable.ic_menu_compass)
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setPriority(NotificationCompat.PRIORITY_LOW)
                 .setCategory(NotificationCompat.CATEGORY_SERVICE)
         } else {
             builder.setContentTitle("")
                 .setContentText("")
-                .setSmallIcon(android.R.drawable.ic_menu_compass)
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setPriority(NotificationCompat.PRIORITY_MIN)
                 .setVisibility(NotificationCompat.VISIBILITY_SECRET)
                 .setColor(Color.TRANSPARENT)
