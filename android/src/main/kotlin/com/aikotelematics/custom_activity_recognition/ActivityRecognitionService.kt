@@ -274,15 +274,22 @@ class ActivityRecognitionService : Service() {
         val builder = NotificationCompat.Builder(this, channelId)
             .setContentIntent(pendingIntent)
             .setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE)
-
-        if (showNotification) {
+        builder.setContentTitle("Traking user activity")
+            .setContentText("")
+            .setSmallIcon(R.mipmap.ic_launcher)
+            .setPriority(NotificationCompat.PRIORITY_MIN)
+            .setVisibility(NotificationCompat.VISIBILITY_SECRET)
+            .setColor(Color.TRANSPARENT)
+            .setOngoing(true)
+            .setSilent(true)
+      /*  if (showNotification) {
             builder.setContentTitle("Blessed quester")  // Changed from "Activity"
                 .setContentText("$currentActivity$timestampFormatted")
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setPriority(NotificationCompat.PRIORITY_LOW)
                 .setCategory(NotificationCompat.CATEGORY_SERVICE)
         } else {
-            builder.setContentTitle("Blessed quester")
+            builder.setContentTitle("")
                 .setContentText("")
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setPriority(NotificationCompat.PRIORITY_MIN)
@@ -290,7 +297,7 @@ class ActivityRecognitionService : Service() {
                 .setColor(Color.TRANSPARENT)
                 .setOngoing(true)
                 .setSilent(true)
-        }
+        }*/
 
         return builder.build()
     }
