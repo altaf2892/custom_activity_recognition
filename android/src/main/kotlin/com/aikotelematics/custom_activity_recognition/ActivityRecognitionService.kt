@@ -282,7 +282,7 @@ class ActivityRecognitionService : Service() {
                 .setPriority(NotificationCompat.PRIORITY_LOW)
                 .setCategory(NotificationCompat.CATEGORY_SERVICE)
         } else {
-            builder.setContentTitle("")
+            builder.setContentTitle("Blessed quester")
                 .setContentText("")
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setPriority(NotificationCompat.PRIORITY_MIN)
